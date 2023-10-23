@@ -2,53 +2,68 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
- <modelVersion>4.0.0</modelVersion>
- 
- <groupId>biz.tugay</groupId>
- <artifactId>testj</artifactId>
- <version>1.0-SNAPSHOT</version>
- 
- <dependencies>
-  <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.4</version>
-  </dependency>
-<dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <version>1.3.164</version>
-    <scope>test</scope>
-</dependency>
-<dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <version>1.3.163</version>
-    <scope>test</scope>
-</dependency>  
-</dependencies>
-<properties>
-  <maven.compiler.source>8</maven.compiler.source>
-  <maven.compiler.target>8</maven.compiler.target>
-</properties>
-<build>
-  <plugins>
-    <plugin>
-      <groupId>com.sonatype.clm</groupId>
-      <artifactId>clm-maven-plugin</artifactId>
-      <version>2.39.0-01</version>
-      <executions>
-        <execution>
-          <goals>
-            <goal>index</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin> 
-  </plugins>
-</build>
-​
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>biz.tugay.pg</groupId>
+  <artifactId>jaxrs</artifactId>
+  <version>v0.2-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>jaxrs-pg</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+      <version>2.1.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-server</artifactId>
+      <version>2.29.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>2.29.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>2.29.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>2.29.1</version>
+    </dependency>
+    <!-- Either use jersey-media-json-jackson or jersey-media-moxy, not both.
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-moxy</artifactId>
+      <version>2.29.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>jakarta.json</groupId>
+          <artifactId>jakarta.json-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.10</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
-
-
-
